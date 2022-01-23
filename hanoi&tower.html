@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skolski-projekat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <header>
+        <nav>
+            <ul class="nav-links">
+              <a class="button" href="index.html"><buttons>Home</buttons></a>
+              <a class="button" href="about.html"><button>About us</button></a>
+              <a class="button" href="contact.html"><button>Contact</button></a>
+              </ul>
+    </nav>
+  
+    </header>
+</head>
+<body>
+    <h1>HANOJSKI TORANJ</h1>
+    <div class="dnn">
+    <p>Hanojski toranj matematička igra ili slagalica, sastoji se od tri šipke i određenog broja diskova različitih veličina, koji se mogu premestiti na bilo koju šipku.   
+        Slagalica započinje sa diskovima u urednom i rastućem redosledu.</p>
+            
+    <p>Cilj slagalice je premestiti sve diskove na drugu šipku, poštujući sledeća jednostavna pravila:</p>
+                
+    <p>Istovremeno se moze premestiti samo 1 disk
+                    
+        <p>Svaki potez sastoji se od uzimanja gornjeg diska sa jedne sipke i njegovo postavljanje na drugu sipku sa diskovima ili na praznu šipku.</p>
+                        
+        <p>Ni jedan veći disk ne sme se postaviti na vrh manjeg diska.</p>
+        
+                            <p>Sa 3 diska, zagonetka se može resiti u 7 poteza. 
+        Minimalan broj poteza potreban za rešavanje zagonetke Tower of Hanoi je 2 - 1, gde je n broj diskova.</p>
+        
+    </div>
+        <div class="img-container"></div>
+        <div class="photos1">
+            <img src="th1.jpg.jpeg" alt="Tower of Hanoi Game">
+            <img src="th2.gif.gif" alt="Tower of Hanoi Example">
+        </div>
+<div class="dnn">
+        <p>Kada dolazi do resavanja problema hanojskog tornja u programskom jeziku c++ moramo poznavati osnovu koda koji koristimo njegovo znacenje i sta odredjeni kod vrsi u funkciji.</p>
+    </div>
+    <pre>
+            <code class="language-c">
+            
+            
+//Kao i uvek krecemo sa bibliotekom iostream i funkcijom name space std;
+#include &lt;iostream&gt;
+using namespace std;
+//Void towers, ovime definisete, vas zadatak tako da racunar zna da se radi o tornjevima i na taj nacin se program i izvrsava.
+void towers(int, char, char, char);
+int main()
+{
+    //Ovim kao i uvek do sad definisemo celobrojnu vrednost u ovom slucaju broj diskova.
+    int num;
+    cout&lt;&lt;"Unesite broj diskova: ";
+    cin>>num;
+    //I dobijate output ili ti resenje zadatka na koji ce se nacin diskovi kretati da bi dosli do konacnog resenja.
+    cout&lt;&lt;"Niz sekvenci uključenih u Hanojsku kulu su :\n";
+    //Ovim dajete nazive vasim tornjevima ,i u ovom primeru smo ih nazvali toranj A,C,B.
+    towers(num, 'A', 'C', 'B');
+    return 0;
+    //"Ovime se kod zavrsava"
+}
+//Ovde odredjujete na kako ce vas output biti predstavljen
+void towers(int num, char frompeg, char topeg, char auxpeg)
+{
+    if (num == 1)
+    {   
+        //Ukoliko je broj jednak 1 u tom slucaju ce vam izaci sledeci output.
+        cout&lt;&lt;"\n Disk 1 premesti sa stranice "&lt;&lt;frompeg&lt;&lt;" na stranicu "&lt;&lt;topeg;
+        return;
+    }
+    //Vrednost num(broja diskova koji ste uneli) se umanjuje za jedan.
+    towers(num - 1, frompeg, auxpeg, topeg);
+    //I nakon sto je broj umanjen za jedan izlazi vam output(vi sami odredjujete sta ce pisati u outputu).
+    cout&lt;&lt;"\n Premesti disk "&lt;&lt;num&lt;&lt;" sa stranice "&lt;&lt;frompeg&lt;&lt;" na stranicu "&lt;&lt;topeg;
+    towers(num - 1, auxpeg, topeg, frompeg);
+}
+//I sada mozemo reci da je nas zadatak zavrsen.
+
+//Ali! najpre proverite vas kod u konzoli opcijom run.
+
+            </code>
+
+        </pre>
+
+        
+<div class="dfs">
+    <p>Posetite neke od sajtova gde mozete kucati, prepravljati i proveravati vas kod...</p>
+        <a class="dfq" href="https://www.onlinegdb.com/online_c++_compiler"><button2s>OnlineGDB</button2s></a>
+        <a class="dfq" href="https://www.programiz.com/cpp-programming/online-compiler/"><button2>Programizz</button2></a>
+        <a class="dfq" href="https://replit.com/languages/cpp"><button2>Replit</button2></a>
+    </div>
+</body>
+</html>
